@@ -8,7 +8,7 @@ TOOLS_DIR = "tools"  # Dossier contenant les scripts Python
 console = Console()
 
 tools_mapping = {
-    1: "ip-generator.py",
+    1: "Ip-generator.py",
     2: "ip-lookup.py",
     3: "ip-pinger.py",
     4: "ip-port-scanner.py",
