@@ -2,7 +2,6 @@ import os
 import subprocess
 from rich.console import Console
 from rich.align import Align
-from tools.Config.Util import *
 
 # Configuration
 TOOLS_DIR = "tools"  # Dossier contenant les scripts Python
