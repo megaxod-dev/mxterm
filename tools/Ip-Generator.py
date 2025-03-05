@@ -16,7 +16,7 @@ except Exception as e:
 
 # Nettoyage de l'écran (fonctionne sous Linux/Mac, sous Windows on peut utiliser 'cls')
 def clear_screen():
-    os.system('clear' if sys.platform != 'win32' else 'cls')
+    os.system('clear')
 
 # Affichage de la bannière
 def display_banner():
@@ -70,12 +70,8 @@ try:
         ip = ".".join(str(random.randint(1, 255)) for _ in range(4))
 
         try:
-            if sys.platform.startswith("win"):
-                result = subprocess.run(['ping', '-n', '1', ip], capture_output=True, text=True, timeout=0.1)
-            elif sys.platform.startswith("linux"):
-                result = subprocess.run(['ping', '-c', '1', '-W', '1', ip], capture_output=True, text=True, timeout=0.1)
-            else:
-                ErrorPlateform()
+            # Sur Termux, c'est Linux, donc on garde la commande ping adaptée
+            result = subprocess.run(['ping', '-c', '1', '-W', '1', ip], capture_output=True, text=True, timeout=0.1)
 
             if result.returncode == 0:
                 number_valid += 1
